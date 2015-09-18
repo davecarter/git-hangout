@@ -86,7 +86,75 @@
 				            <li>Versionado de código</li>
 				            <li>Código colaborativo</li>
 				            <li>Recuperación de archivos</li>
-				        </ul>				        
+				            <li>Estándar actual</li>
+				        </ul>
+				    </section>
+
+				    <section>
+				        <h3>Git en Terminal</h3>
+				        <ul>
+				            <li>Mayor control</li>
+				            <li>Shorcuts / Plugins</li>
+				            <li>Mejora tu productividad</li>
+				            <li style="color: grey"><strike>Impresionarás a las chicas</strike></li>
+				        </ul>
+				    </section>
+				</section>
+
+				<section>
+				    <section>
+				        <img src="./img/git-logo.png" alt="" width="150">
+				        <h4>Instalación</h4>
+				    </section>
+
+				    <section>
+				    	<h3>Command Line Tools</h3>
+				    	<pre><code data-trim contenteditable>
+$ xcode-select --install
+				    	</code></pre>
+				    	<small>Es probable que necesitemos descargar las Command Line Tools for Xcode</small>
+				    </section>
+				    
+				    <section>
+				        <h3>Descarga Git</h3>
+				        <h4 class="marker">Selecciona la versión adecuada a tu Sistema Operativo:</h4>
+				        <p>Git está disponible para Windows, Mac, Linux y Solaris.</p>
+				        <a href="http://git-scm.com/downloads" target="_blank"><img src="./img/download-folder.png" alt="" width="150"></a>
+				    </section>
+				    
+				    <section>
+				        <h3>Inicializar repositorio:</h3>
+				        <h4 class="marker">Creamos un repositorio local</h4>
+				        <p>En un directorio vacío ejecutamos el siguiente comando:</p>
+				        <pre><code data-trim contenteditable>
+$ > mkdir git-hangout
+$ > cd git-hangout
+$ git-hangout > git init
+
+				        </code></pre>
+				    </section>
+
+				    <section>
+				        <h3>Crear un nuevo archivo:</h3>
+				        <p class="marker">Git llevará un control exahustivo sobre todos los cambios que vayamos haciendo.</p>
+				        <pre><code data-trim contenteditable>
+
+$ touch README.md
+
+				        </code></pre>
+				        <small>El comando UNIX <span class="marker">touch</span> nos crea un nuevo archivo. <br />Edítalo y guarda los cambios.</small>
+				    </section>
+
+				    <section>
+				        <h3>Git <span class="marker">Status</span>:</h3>
+				        <p class="marker">Listado de archivos nuevos (untracked), borrados o editados</p>
+				        <pre><code data-trim contenteditable>
+
+$ git status
+
+				        </code></pre>
+				        <p><img src="img/git-status.png" alt="" width="800"></p>
+				        <small>Rutas relativas a la raíz del repositorio.</small>
 				    </section>
 				</section>
 

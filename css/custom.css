@@ -3,6 +3,16 @@
   background: none;
 }
 
+.reveal pre {
+  line-height: 1.5;
+  font-size: 1em;
+}
+
 .marker {
   color: #e7ad52;
+}
+
+.hljs-prompt,
+.hljs-variable {
+  color: #00B922 !important;
 }
