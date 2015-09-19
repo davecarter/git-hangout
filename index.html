@@ -179,6 +179,7 @@ $ git status
 			    </section>
 
 			    <section>
+			    	<img src="img/git-laptop.png" alt="" width="300"> 
 			    	<h3>Local & Remote</h3>
 			    	<p>Git dispone de 3 estados en local y uno remoto</p>
 			    </section>
@@ -201,17 +202,17 @@ $ git status
 			    </section>
 			    
 			    <section>
-			        <h3>Añadir archivos al Staging:</h3>
+			        <h3>Git <span class="marker">add</span></h3>
 			        <p>Una vez creados, modificados, añadidos o borrados los archivos al <span class="marker">working dir</span> los pasamos al <span>staging</span> mediante:</p>
 			        <pre><code data-trim contenteditable>
 
-$ git add [nombre de archivo/os]
+$ git add nombre de archivo/os
 			        </code></pre>
 			        <p> o bien:</p>
 			        <pre><code data-trim contenteditable>
-$ git add --all [todos los archivos]
-
+$ git add --all
 			        </code></pre>
+							<p> todos los archivos</p>
 			    </section>
 
 			    <section>
@@ -222,10 +223,10 @@ $ git add --all [todos los archivos]
 			    </section>
 
 			    <section>
-			        <h3>Añadir archivos al HEAD:</h3>
+			        <h3>Git <span class="marker">commit</span></h3>
 			        <p>Cuando hemos completado un conjunto de cambios, los "empaquetamos" mediante la instrucción <span>commit</span> y los colocamos en el <span class="marker">HEAD</span> mediante:</p>
-			        <pre><code data-trim contenteditable style="font-size: 1.2em">
-$ git commit -m ['mensaje descriptivo']
+			        <pre><code data-trim contenteditable>
+$ git commit -m 'mensaje descriptivo'
 			        </code></pre>
 			    </section>
 
@@ -236,25 +237,26 @@ $ git commit -m ['mensaje descriptivo']
 			        <img src="img/git-level-head.png" alt="">
 			    </section>
 
-			    <section>
-			        <h3>Trabajando con repositorios remotos</h3>
-			        <p>Hasta ahora hemos usado Git para controlar conjuntos de cambios en local. <br />Vamos a crear un repositorio remoto y lo vincularemos a nuestro local para poder trabajar en equipo:</p>
+			    <section data-background="#20325F">
+			    		<img src="img/github-octocat.png" alt="">
+			        <h3>ORIGIN remoto</h3>
+			        <p>Ahora vincularemos nuestro repo local con uno remoto en <span>Github</span> para poder trabajar en equipo:</p>
 
 			        <a href="http://github.com" target="_blank">Créate una cuenta en Github.com</a>
 			    </section>
 
 			    <section>
-			        <h3>Añadir repositorio remoto</h3>
+			        <h3>Git <span class="marker">remote add origin</span></h3>
 			        <p>Una vez creado el repositorio remoto en Github lo "vinculamos" a nuestro repositorio local mediante:</p>
-			        <pre><code data-trim contenteditable style="font-size: 1.2em">
+			        <pre><code data-trim contenteditable>
 $ git remote add origin https://github.com/user/repo.git
 			        </code></pre>
 			    </section>
 
 			    <section>
-			        <h3>Enviando cambios a remoto</h3>
+			        <h3>Git <span class="marker">push</span></h3>
 			        <p>Una vez indicado a Git que tenemos un repositorio remoto podemos enviar el conjunto de cambios contenidos en nuestro HEAD mediante:</p>
-			        <pre><code data-trim contenteditable style="font-size: 1.2em">
+			        <pre><code data-trim contenteditable>
 $ git push -u origin master
 			        </code></pre>
 			    </section>
@@ -267,21 +269,22 @@ $ git push -u origin master
 			    </section>
 
 			    <section>
-			        <h3>Trabajando en equipo</h3>
+			        <h3>Git <span class="marker">clone</span></h3>
 			        <p>Un software de control de versiones adquiere mayor relevancia cuando colaboran diferentes miembros de un equipo sobre el mismo código.</p>
 			        <p>Una vez creado el repositorio remoto, el resto de miembros del equipo pueden bajarse una copia a sus equipos mediante:</p>
-			        <pre><code data-trim contenteditable style="font-size: 1.2em">
+			        <pre><code data-trim contenteditable>
 $ git clone https://github.com/user/repo.git
 			        </code></pre>
 			    </section>
 
 			    <section>
-			        <h3>Obteniendo archivos remotos</h3>
-			        <p>Una vez clonado el repositorio ya podemos empezar a añadir código<br /> a nuestro <span class="marker">working dir, stage y HEAD</span></p>
-			        <p>Antes de enviar nuestros cambios tenemos que bajarnos la última versión de <span class="marker">origin</span></p>
-			        <pre><code data-trim contenteditable style="font-size: 1.2em">
+			        <h3>Git <span class="marker">pull</span></h3>
+			        <p>Sincronizar nuestro local con origin</p>
+			        <p>Antes de enviar nuestros cambios tenemos que bajarnos la última versión de <span class="marker">repositorio remoto</span></p>
+			        <pre><code data-trim contenteditable>
 $ git pull origin master
 			        </code></pre>
+			        <small>obtenemos los últimos cambios de origin y los combinamos con la rama master</small>
 			    </section>
 
 			    <section>
@@ -292,23 +295,17 @@ $ git pull origin master
 			    </section>
 
 			    <section>
-			        <h3>Combinando archivos</h3>
-			        <p>Cuando dos miembros del equipo han modificado el mismo archivo Git procura combinarlos automáticamente. </p>
-			        <p>Puede darse el caso de que surja un conflicto si Git no reconoce qué parte del código ha de quedarse y cual eliminar. En este caso hemos de editarlo manualmente.</p>
-			    </section>
-
-			    <section>
-			        <h3>Estado de Git</h3>
-			        <p>Podemos consultar en cualquier momento cual es el estado de nuestros archivos mediante:</p>
-			        <pre><code data-trim contenteditable style="font-size: 1.2em">
-$ git status
-			        </code></pre>
+			    		<img src="img/git-merge.png" alt="" width="100">
+			        <h3>Git <span class="marker">merge</span></h3>
+			        <p>Git procura combinar los cambios automáticamente*.</p>
+			        <p>Si no reconoce qué parte del código ha de quedarse y cual eliminar, hemos de editarlo manualmente.</p>
+			        <small>*Recursive strategy</small>
 			    </section>
 
 			    <section>
 			        <h3>Consultar historial</h3>
 			        <p>Además, podemos consultar el historial de "commits" realizados por los diferentes miembros del equipo mediante:</p>
-			        <pre><code data-trim contenteditable style="font-size: 1.2em">
+			        <pre><code data-trim contenteditable>
 $ git log
 			        </code></pre>
 			    </section>
