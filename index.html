@@ -70,7 +70,7 @@
 				    
 				    <section>
 				        <h3>¿Qué es Git?</h3>
-				        <h4>Git es un Software de control de versiones <span class="marker">distribuido</span> que permite a un equipo de desarrolladores trabajar sobre el mismo código.</h4>
+				        <h4>Git es un Software de control de versiones <span class="marker">distribuido</span> y <span class="marker">descentralizado</span> que permite a un equipo de desarrolladores trabajar sobre el mismo código.</h4>
 				    </section>
 				    
 				    <section>
@@ -78,7 +78,13 @@
 				        <p>Se denomina "distribuido" porque cada miembro del equipo dispone de <span class="marker">una copia completa del código</span>.</p>
 				        
 				        <img src="./img/distributed.png" alt="" width="300">
+				    </section>
 
+				    <section>
+				        <h3>Control de versiones <span class="marker">descentralizado</span></h3>
+				        <p>Los miembros del equipo pueden enviarse código, recibirlo y desarrollar funcionalidades de forma conjunta y <span class="marker">separada del servidor central</span>.</p>
+				        <img src="img/git-centr-decentr.png" alt="" width="500">
+				        
 				    </section>
 
 				    <section>
@@ -99,7 +105,7 @@
 				            <li>Mayor control</li>
 				            <li>Shorcuts / Plugins</li>
 				            <li>Mejora tu productividad</li>
-				            <li style="color: grey"><strike>Impresionarás a las chicas</strike></li>
+				            <li style="color: grey"><strike>Ligarás más</strike></li>
 				        </ul>
 				    </section>
 				</section>
@@ -137,7 +143,7 @@ $ git config --global user.email dave74@gmail.com
 				    </section>
 
 				    <section>
-				        <h3>Inicializar repositorio:</h3>
+				        <h3>Git <span class="marker">init</span></h3>
 				        <h4 class="marker">Creamos un repositorio local</h4>
 				        <p>En un directorio vacío ejecutamos el siguiente comando:</p>
 				        <pre><code data-trim contenteditable>
@@ -149,8 +155,19 @@ $ git-hangout > git init
 				    </section>
 
 				    <section>
+				    	<h3>Directorio <span class="marker">Git</span></h3>
+				    	<p>Git init crea un directorio oculto <span class="marker">.git</span> con el siguiente contenido:</p>
+				    	<ul>
+				    		<li><span class="marker">COMMIT_EDITMSG:</span> Comentarios de mensajes de commit</li>
+				    		<li><span class="marker">HEAD:</span> Puntero hacia la rama activa</li>
+				    		<li><span class="marker">config:</span> URLs de origin e info de ramas</li>
+				    		<li>...</li>
+				    	</ul>
+				    </section>
+
+				    <section>
 				        <h3>Crear un nuevo archivo:</h3>
-				        <p class="marker">Git llevará un control exahustivo sobre todos los cambios que vayamos haciendo.</p>
+				        <p class="marker">Git llevará un control exhaustivo sobre todos los cambios que vayamos haciendo.</p>
 				        <pre><code data-trim contenteditable>
 
 $ touch README.md
@@ -295,6 +312,32 @@ $ git pull origin master
 			    </section>
 
 			    <section>
+			    		<img src="img/git-log.png" alt="" width="100">
+			        <h3>Git <span class="marker">log</span></h3>
+			        <p>Consulta el historial de "commits" realizados por los diferentes miembros del equipo mediante:</p>
+			        <pre><code data-trim contenteditable>
+$ git log
+			        </code></pre>
+			    </section>
+				</section>
+
+				<section>
+					<section>
+			        <img src="img/git-branch.png" alt="" width="100">
+			        <h2>Ramas en Git</h2>
+			        <small>$ git branch</small>
+			    </section>
+
+			    <section>
+			    		<h3>Git <span class="marker">branch</span></h3>
+			    		<p>Una rama nos permite aislar una nueva funcionalidad en nuestro código que después podremos añadir a la versión principal.</p>
+			    		<p><span class="marker">Para crear una nueva rama:</span></p>
+			        <pre><code data-trim contenteditable>
+$ git branch feature/sliderhome
+			        </code></pre>
+			    </section>
+
+			    <section>
 			    		<img src="img/git-merge.png" alt="" width="100">
 			        <h3>Git <span class="marker">merge</span></h3>
 			        <p>Git procura combinar los cambios automáticamente*.</p>
@@ -303,11 +346,37 @@ $ git pull origin master
 			    </section>
 
 			    <section>
-			        <h3>Consultar historial</h3>
-			        <p>Además, podemos consultar el historial de "commits" realizados por los diferentes miembros del equipo mediante:</p>
-			        <pre><code data-trim contenteditable>
-$ git log
-			        </code></pre>
+			    		<img src="img/git-merge-conflict.png" alt="" width="100">
+			    		<h3>Git merge conflict</h3>
+			    		<p>Cuando Git no puede identificar qué cambios ha de mantener y cual eliminar lanzará el siguiente mensaje:</p>
+			    		<pre style="font-size: .8em"><code data-trim contenteditable>
+$ git merge iss53
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+			    		</code></pre>
+			    </section>
+
+			    <section>
+			    		<h3>Fixing Merge conflict</h3>
+			    		<pre><code data-trim contenteditable>
+
+Código sin conflicto
+
+<<<<<<< HEAD
+I love cats!
+=======
+Dogs are better
+>>>>>>> Master (o SHA del commit)
+
+Código sin conflicto
+
+			    		</code></pre>
+			    </section>
+
+			    <section>
+			    		<h3>Fixing Merge conflict</h3>
+			    		<img src="img/git-merge-schema.png" alt="">
 			    </section>
 				</section>
 
