@@ -139,6 +139,8 @@ $ xcode-select --install
 				    	<pre><code>
 $ git config --global user.name "David G."
 $ git config --global user.email dave74@gmail.com
+$ git config --global core.editor nano
+
 				    	</code></pre>
 				    </section>
 
@@ -177,6 +179,17 @@ $ touch README.md
 				    </section>
 
 				    <section>
+				        <h3>.gitignore</h3>
+				        <p class="marker">Incluimos TODO lo que NO queramos incluir en nuestro repositorio.</p>
+				        <pre><code data-trim contenteditable>
+
+$ touch .gitignore
+
+				        </code></pre>
+				        <small>Podemos crear uno ad-hoc en: <a href="https://www.gitignore.io/">gitignore.io</a></small>
+				    </section>
+
+				    <section>
 				        <h3>Git <span class="marker">Status</span>:</h3>
 				        <p class="marker">Listado de archivos nuevos (untracked), borrados o editados</p>
 				        <pre><code data-trim contenteditable>
@@ -198,11 +211,11 @@ $ git status
 			    <section>
 			    	<img src="img/git-laptop.png" alt="" width="300"> 
 			    	<h3>Local & Remote</h3>
-			    	<p>Git dispone de 3 estados en local y uno remoto</p>
+			    	<p>El flujo de Git se distribuye en 3 estados locales y uno remoto</p>
 			    </section>
 			    
 			    <section>
-			        <h3>Repositorio <span class="marker">Local</span></h3>
+			        <h3>Estados <span class="marker">Locales</span></h3>
 			        <h4 class="marker" style="text-align: center; text-transform: none; font-size: 1.2em">A nivel local disponemos de:</h4><br />
 			        <ul>
 			            <li><span class="marker">Working Dir</span> > El directorio donde almacenamos los archivos</li>
@@ -234,7 +247,7 @@ $ git add --all
 
 			    <section>
 			        <h3>Staging</h3>
-			        <p>En el segundo nivel nuestros archivos están bajo el control de Git. Podemos seguir trabajando y repetir el proceso tantas veces como necesitemos.</p>
+			        <p>En el segundo nivel nuestros archivos están preparados para ser <span class="marker">empaquetados</span>. Podemos seguir trabajando y repetir el proceso tantas veces como necesitemos.</p>
 
 			        <img src="img/git-level-staging.png" alt="">
 			    </section>
@@ -380,6 +393,20 @@ Código sin conflicto
 			    </section>
 				</section>
 
+				<section>
+					<section data-background="#20325F">
+						<h3>Pull Request</h3>
+						<img src="img/github-octocat.png" width="100" alt="">
+						<p>Github.com</p>
+					</section>
+
+					<section>
+						<h3>Objetivo</h3>
+						<p>Incluir nuestros cambios a Master</p>
+						<img src="img/github-pullrequest.jpg" width="200" alt="">
+					</section>
+				</section>
+
 			</div>
 
 		</div>
@@ -397,7 +424,7 @@ Código sin conflicto
 				history: true,
 				center: true,
 
-				transition: 'convex', // none/fade/slide/convex/concave/zoom
+				transition: 'none', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [
