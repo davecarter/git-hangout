@@ -150,7 +150,7 @@ $ git config --global core.editor nano
 				        <pre><code data-trim contenteditable>
 $ > mkdir git-hangout
 $ > cd git-hangout
-$ git-hangout > git init
+$ > git init
 
 				        </code></pre>
 				    </section>
@@ -162,8 +162,12 @@ $ git-hangout > git init
 				    		<li><span class="marker">COMMIT_EDITMSG:</span> Comentarios de mensajes de commit</li>
 				    		<li><span class="marker">HEAD:</span> Puntero hacia la rama activa</li>
 				    		<li><span class="marker">config:</span> URLs de origin e info de ramas</li>
+				    		<li><span class="marker">hooks:</span> Git hooks para CI o Linting</li>
 				    		<li>...</li>
 				    	</ul>
+				    	<p></p>
+				    	<p></p>
+				    	<small>Programas con GUI tipo <a href="https://www.sourcetreeapp.com/">Sourcetree</a> pueden omitir algunos archivos dentro de este directorio.</small>
 				    </section>
 
 				    <section>
@@ -298,15 +302,6 @@ $ git push -u origin master
 			    </section>
 
 			    <section>
-			        <h3>Git <span class="marker">clone</span></h3>
-			        <p>Un software de control de versiones adquiere mayor relevancia cuando colaboran diferentes miembros de un equipo sobre el mismo código.</p>
-			        <p>Una vez creado el repositorio remoto, el resto de miembros del equipo pueden bajarse una copia a sus equipos mediante:</p>
-			        <pre><code data-trim contenteditable>
-$ git clone https://github.com/user/repo.git
-			        </code></pre>
-			    </section>
-
-			    <section>
 			        <h3>Git <span class="marker">pull</span></h3>
 			        <p>Sincronizar nuestro local con origin</p>
 			        <p>Antes de enviar nuestros cambios tenemos que bajarnos la última versión de <span class="marker">repositorio remoto</span></p>
@@ -331,6 +326,42 @@ $ git pull origin master
 $ git log
 			        </code></pre>
 			    </section>
+				</section>
+
+				<section>
+					<section data-background="#20325F">
+			      <img src="img/github-octocat.png" alt="" width="150">
+			      <h2>Inicializando repositorios remotos</h2>
+			    </section>
+
+			    <section data-background="#20325F">
+			      <img src="img/github-octocat.png" alt="" width="150">
+			    	<h3>Github</h3>
+			    	<img src="img/github-create-repo.png" width="600" alt="">
+			    	<br />
+			    	<a href="http://github.com" target="_blank">crea una cuenta en Github</a>
+			    </section>
+
+					<section data-background="#20325F">
+			        <h3>Git <span class="marker">clone</span></h3>
+			        <p>Creamos una copia de un repositorio remoto existente</p>
+			        <pre><code data-trim contenteditable>
+$ git clone https://github.com/user/repo.git
+			        </code></pre>
+			    </section>
+
+					<section data-background="#20325F">
+							<h3>Http o SSH</h3>
+					</section>
+
+					<section>
+						<h3>Secure Shell (SSH)</h3>
+						<ul>
+							<li>Basado en clave pública/privada</li>
+							<li>No requiere autentificación</li>
+						</ul>
+					</section>
+
 				</section>
 
 				<section>
@@ -428,8 +459,14 @@ Código sin conflicto
 							<li>El owner del proyecto puede <span style="color: #5F5">aceptarla</span> o <span style="color: #F55">denegarla</span></li>
 						</ul>
 						<img style="display:block; margin: 30px auto 0" class="fragment" src="img/github-pullrequest.jpg" width="200" alt="">
-
 					</section>
+
+					<section data-background="#20325F">
+						<img src="img/git-fork.png" alt="">
+						<h3>Ejemplo práctico de PR</h3>
+						<a href="https://github.com/davecarter/git-hangout">Repo Git Hangout</a>
+					</section>
+
 				</section>
 
 			</div>
